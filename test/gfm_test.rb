@@ -31,7 +31,7 @@ class TestGFMBasic < Minitest::Test
         File.write('actual.txt', actual)
       end
 
-      html_equal(expected, actual)
+      html_equal(expected.squeeze("\n"), actual.squeeze("\n"))
 
       if source != expected
         assert(source != actual, "#{markup} did not render anything")
